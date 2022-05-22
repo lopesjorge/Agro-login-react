@@ -24,7 +24,7 @@
         .wrap_login{ 
 
             width: 400px;
-            height: 460px;
+            height: 480px;
             background: #201E1E;
             border-radius: 10px;
 
@@ -82,7 +82,7 @@
                         padding: 0 5px;
                     }
 
-                    .fucos_input{
+                    .focus_input{
                         position: absolute;
                         display: block;
                         width: 100%;
@@ -95,7 +95,7 @@
                         color: #adadad;
                     }
 
-                    .fucos_input::before{
+                    .focus_input::before{
                         content: "";
                         display: block;
                         position: absolute;
@@ -116,7 +116,7 @@
                           
                     }
 
-                    .fucos_input::after{
+                    .focus_input::after{
                         font-size: 15px;
                         color: #999999;
                         line-height: 1.2;
@@ -137,14 +137,21 @@
                         transition: all 0.4s;
                     }
 
-                    .input:focus + .fucos_input::after{
+                    .input:focus + .focus_input::after{
                         top: -15px;
                     }
 
-                    .input:focus + .fucos_input::before{
+                    .input:focus + .focus_input::before{
                         width: 100%;
                     }
 
+                    .has_value +.focus_input::after{
+                        top: -15px;
+                    }
+
+                    .has_value  + .focus_input::before{
+                        width: 100%;
+                    }
 
                 }
 
@@ -177,9 +184,27 @@
                     background: -moz-linear-gradient(to left, #27AE60, #c9da30);
                     background: linear-gradient(to left,#27AE60, #c9da30);
                   }
+
+                  .login_form_btn:hover{
+                      cursor: pointer;
+                  }
                 }
             
+                .esqueceu_senha_cadastro{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
+                    margin: 20px;
+
+                    .texto_1{
+                        font-size: 14px;
+                        color: azure;
+                        line-height: 1.5;
+
+                        text-decoration: none;
+                    }
+                }
             }
         }
     }

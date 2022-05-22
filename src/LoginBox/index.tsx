@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import styles from './styles.module.scss'
 
 export function  LoginBox(){
+    const [email, setEmail] = useState ("")
+    const [password,setPassword] = useState ("")
+
     return(
           <div className={styles.container}>
                 <div className={styles.container_login}>
@@ -16,13 +20,16 @@ export function  LoginBox(){
                                </span>
 
                                <div className={styles.wrap_input}>
-                                   <input className={styles.input} type="email"/>
-                                   <span className={styles.fucos_input} data-placeholder= 'Email'></span>
+                                   <input className={ email !== "" ? styles.has_value : styles.input } type="email" value={email}
+                                    onChange={(e) => setEmail(e.target.value)}/>
+                                   <span className={styles.focus_input} data-placeholder= 'Email'></span>
                                </div>
 
                                <div className={styles.wrap_input}>
-                                   <input className={styles.input} type="password"/>
-                                   <span className={styles.fucos_input} data-placeholder= 'Password'></span>
+                                   <input className={password!== "" ? styles.has_value : styles.input} type="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}/>
+                                   <span className={styles.focus_input} data-placeholder= 'Password'></span>
                                </div>
 
                                <div className={styles.container_login_form_btn}>
